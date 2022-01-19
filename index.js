@@ -9,17 +9,25 @@ function addMovie(event)  {
     
     movieTitle.textContent = inputField.value;
     movie.appendChild(movieTitle);
-
+    
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'x';
+    deleteBtn.addEventListener('click', deleteMovie)
+    movie.appendChild(deleteBtn);
+    
+    
     document.querySelector('ul').appendChild(movie);
-
-
+    
+    
     // function clear()    {
-    //     inputField.value = ''        
-    // }
-    // document.querySelector('button').addEventListener('submit', clear)
-}
-
-document.querySelector('form').addEventListener('submit', addMovie);
-
-
+        //     inputField.value = ''        
+        // }
+        // document.querySelector('button').addEventListener('submit', clear)
+    }
+    
+    document.querySelector('form').addEventListener('submit', addMovie);
+    
+    function deleteMovie(event) {
+        event.target.parentNode.remove();
+    }
 

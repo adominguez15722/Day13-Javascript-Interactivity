@@ -1,4 +1,7 @@
-console.log('hello world');
+// console.log('hello world');
+
+let message = document.querySelector('#message')
+
 
 function addMovie(event)  {
     
@@ -32,10 +35,17 @@ function addMovie(event)  {
     
 function deleteMovie(event) {
     event.target.parentNode.remove();
+    message.textContent = 'Movie deleted!'
 }
     
 function crossOffMovie(event)    {
-    event.target.classList.toggle('checked')
+    event.target.classList.toggle('checked');
+    if(event.target.classList.contains('checked'))    {
+        message.textContent = 'Movie watched'
+    }   else{
+        message.textContent = 'Movie added back!'
+    }
 }
+
 
 
